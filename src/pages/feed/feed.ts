@@ -47,7 +47,10 @@ export class FeedPage {
   ionViewDidLoad() {
     this.movieProvider.getLatestMovies().subscribe(
       data => {
-        console.log(data);
+        const response = (data as any);
+        const objeto_retorno = JSON.parse(response._body);
+
+        console.log(objeto_retorno);
       }, erro => {
         console.log(erro);
       }

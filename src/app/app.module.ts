@@ -47,3 +47,4 @@ import { MoovieProvider } from '../providers/moovie/moovie';
   ]
 })
 export class AppModule {}
+
