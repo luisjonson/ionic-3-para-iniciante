@@ -29,6 +29,8 @@ export class FeedPage {
     time_comment: "11h ago"
   }
 
+  public lista_filmes = new Array<any>();
+
   // variavel 
   public nome_usuario: string = "Luis Lindonjonson";
 
@@ -40,17 +42,17 @@ export class FeedPage {
   }
 
   //função 
-  public somaDeDoisNumero(num1: number, num2: number): void {
+  /*public somaDeDoisNumero(num1: number, num2: number): void {
     alert(num1 + num2);
-  }
+  }*/
 
   ionViewDidLoad() {
     this.movieProvider.getLatestMovies().subscribe(
       data => {
         const response = (data as any);
         const objeto_retorno = JSON.parse(response._body);
-
-        console.log(objeto_retorno);
+        this.lista_filmes = objeto_retorno.results;
+       console.log(objeto_retorno);
       }, erro => {
         console.log(erro);
       }

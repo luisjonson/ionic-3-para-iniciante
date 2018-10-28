@@ -11,14 +11,14 @@ import { Http } from '@angular/http';
 export class MoovieProvider {
 
   private baseApiPath = "https://api.themoviedb.org/3";
-  private apiKey = "api_key=api_key";
+  private apiKey = "*************************";
 
   constructor(public http: Http) {
     console.log('Hello MoovieProvider Provider');
   }
 
   getLatestMovies() {
-    return this.http.get(this.baseApiPath + "/movie/latest?" + this.apiKey);
+    return this.http.get(this.baseApiPath + "/movie/popular?" + this.apiKey);
   }
 
 }
